@@ -5,9 +5,6 @@ extends Node2D
 var __direction: Vector2 = Vector2.ZERO
 var __sprite_speed = 250
 
-# func _ready() -> void:
-# 	get_viewport().canvas_transform.origin = Vector2(200, 200)
-
 func _unhandled_input(event: InputEvent) -> void:
 	handle_directional_input()
 	if not event is InputEventMouseButton:
@@ -17,15 +14,19 @@ func _unhandled_input(event: InputEvent) -> void:
 	if me.button_index != MOUSE_BUTTON_LEFT || !me.is_pressed():
 		return
 
-	print('position:        ' + str(event.position))
-	print('global position: ' + str(event.global_position))
+	# event.global_position returns screen / window (unclear) coordinates and doesn't account
+	# for canvas/viewport offset so this attempt to convert to map-local coords doesn't work
+	# print('position:        ' + str(event.position))
+	# print('global position: ' + str(event.global_position))
+	# var tilemap_local_xy = __tileMap.to_local(me.global_position)
+	# var hex_coords = __tileMap.local_to_map(tilemap_local_xy)
+	# print('tile coords: ' + str(hex_coords))
 
-	# print('global_position: ' + str(me.global_position))
-	# print('position: ' + str(me.position))
-
-	var tilemap_local_xy = __tileMap.to_local(me.global_position)
-	# print('tilemap local: ' + str(tilemap_local_xy))
-	var hex_coords = __tileMap.local_to_map(tilemap_local_xy)
+	# CanvasItem has a call that does the mapping for you however
+	var local_xy = __tileMap.get_local_mouse_position()
+	# ...which means we can pass that directly to the local->map function
+	var hex_coords = __tileMap.local_to_map(local_xy)
+	# ...and get rational hex coords out of it
 	print('tile coords: ' + str(hex_coords))
 
 func _physics_process(delta: float) -> void:

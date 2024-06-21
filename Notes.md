@@ -22,6 +22,13 @@
 - [Catlike Coding](https://catlikecoding.com/unity/tutorials/hex-map/) &mdash; Unity centric (and old versions at that) but goes into many aspects of dealing
   with hex maps. Probably some relevant info and CLC is a great resource in general.
 
+### Coordinate systems
+Godot's coordinate system situation is currently mostly jank but [TestCoords.gd](./Scratch/TestCoords.gd)
+has a demo project that converts clicks into tile coordinates without getting messed up by
+node or viewport offsets.
+
+Using Godot's `Stacked` layout the tiles use an `even-r` coordinate system.
+
 ## Initial Design Thoughts
 
 ### Map Metadata
