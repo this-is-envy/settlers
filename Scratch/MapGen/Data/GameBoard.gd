@@ -15,3 +15,6 @@ func init_for_play() -> void:
   for k in __tiles.keys():
     __tiles[k].terrain = randi() % values.size()
     print(__tiles[k])
+
+func tiles() -> Array[Hex]:
+  return __tiles.values()

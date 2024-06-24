@@ -17,3 +17,4 @@ func _unhandled_input(event: InputEvent) -> void:
 			board = __level.generate_board()
 
 	board.init_for_play()
+	__level.reify(board)
