@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c84o3l1rgjegd"]
 
-[ext_resource type="Script" path="res://Scratch/TestCoords.gd" id="1_jjdbe"]
+[ext_resource type="Script" path="res://Scratch/Coords/TestCoords.gd" id="1_jjdbe"]
 [ext_resource type="Texture2D" uid="uid://dm32vyrxa6dn6" path="res://Scratch/hexagonTerrain_sheet.png" id="1_yvmbl"]
 [ext_resource type="Texture2D" uid="uid://cab00go3ib2mx" path="res://icon.svg" id="3_otx70"]
 
