@@ -3,12 +3,14 @@ extends RefCounted
 class_name Utils
 
 const TERRAIN_TO_ATLAS = {
+  Enums.Terrain.ALLOCATE: Vector2(2, 9),
   Enums.Terrain.DESERT: Vector2(2, 3),
   Enums.Terrain.GRASS: Vector2(5, 1),
   Enums.Terrain.CONCRETE: Vector2(0, 12),
 }
 
 const ATLAS_TO_TERRAIN = {
+  "2,9": Enums.Terrain.ALLOCATE,
   "2,3": Enums.Terrain.DESERT,
   "5,1": Enums.Terrain.GRASS,
   "0,12": Enums.Terrain.CONCRETE,
