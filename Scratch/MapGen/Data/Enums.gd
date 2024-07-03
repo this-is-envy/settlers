@@ -22,3 +22,8 @@ static func TerrainName(t: Terrain) -> String:
     Terrain.ALLOCATE:
       return 'ALLOCATE'
   return 'UNKNOWN'
+
+enum Phase {
+  PlaceTerrain,
+  RandomizeTerrain,
+}

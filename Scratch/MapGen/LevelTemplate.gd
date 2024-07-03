@@ -5,10 +5,10 @@ class_name LevelTemplate
 const PLAYABLE_LAYER = 1
 const TILEMAP_SOURCE = 0
 
-@onready var __tilemap = $TileMap
+@onready var __tilemap: TileMap = $TileMap
 
 func generate_board() -> GameBoard:
-	var coords = __tilemap.get_used_cells(PLAYABLE_LAYER)
+	var coords := __tilemap.get_used_cells(PLAYABLE_LAYER)
 
 	var hexes: Array[Hex] = []
 	for c in coords:
