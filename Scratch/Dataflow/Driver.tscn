@@ -13,19 +13,67 @@ script = ExtResource("1_yudu2")
 
 [node name="Camera2D" type="Camera2D" parent="BoardDisplay"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="DesertButton" type="Button" parent="CanvasLayer"]
-offset_left = 978.0
-offset_top = 519.0
-offset_right = 1099.0
-offset_bottom = 564.0
+[node name="GameUI" type="CanvasLayer" parent="HUD"]
+visible = false
+
+[node name="DesertButton" type="Button" parent="HUD/GameUI"]
+offset_left = 1003.0
+offset_top = 575.0
+offset_right = 1124.0
+offset_bottom = 620.0
 text = "Desert"
 
-[node name="GrassButton" type="Button" parent="CanvasLayer"]
-offset_left = 978.0
-offset_top = 456.0
-offset_right = 1099.0
-offset_bottom = 501.0
+[node name="GrassButton" type="Button" parent="HUD/GameUI"]
+offset_left = 1003.0
+offset_top = 512.0
+offset_right = 1124.0
+offset_bottom = 557.0
 text = "Grass
 "
+
+[node name="PhaseLabel" type="Label" parent="HUD/GameUI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="CanvasLayer" parent="HUD"]
+
+[node name="StartButton" type="Button" parent="HUD/Menu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="HUD/Menu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 50.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[connection signal="pressed" from="HUD/Menu/StartButton" to="." method="_on_start_game"]
+[connection signal="pressed" from="HUD/Menu/QuitButton" to="." method="_on_quit_game"]

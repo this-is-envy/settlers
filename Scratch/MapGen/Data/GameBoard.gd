@@ -1,6 +1,5 @@
-extends RefCounted
-
 class_name GameBoard
+extends RefCounted
 
 # TileCoords (as String) -> Hex
 var _tiles: Dictionary = {}

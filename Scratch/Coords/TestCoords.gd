@@ -3,7 +3,7 @@ extends Node2D
 @onready var __tileMap: TileMap = $TileMap
 @onready var __sprite: Sprite2D = $Sprite2D
 var __direction: Vector2 = Vector2.ZERO
-var __sprite_speed = 250
+var __sprite_speed:int  = 250
 
 func _unhandled_input(event: InputEvent) -> void:
 	handle_directional_input()
@@ -23,9 +23,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	# print('tile coords: ' + str(hex_coords))
 
 	# CanvasItem has a call that does the mapping for you however
-	var local_xy = __tileMap.get_local_mouse_position()
+	var local_xy: Vector2 = __tileMap.get_local_mouse_position()
 	# ...which means we can pass that directly to the local->map function
-	var hex_coords = __tileMap.local_to_map(local_xy)
+	var hex_coords: Vector2 = __tileMap.local_to_map(local_xy)
 	# ...and get rational hex coords out of it
 	print('tile coords: ' + str(hex_coords))
 

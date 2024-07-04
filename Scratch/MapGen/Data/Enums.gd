@@ -1,6 +1,5 @@
-extends RefCounted
-
 class_name Enums
+extends RefCounted
 
 enum Terrain {
   # by convention the allocation tile is 0 so we can trivially avoid
@@ -23,7 +22,14 @@ static func TerrainName(t: Terrain) -> String:
       return 'ALLOCATE'
   return 'UNKNOWN'
 
-enum Phase {
+
+enum GameState {
+  Menu,
+  Play,
+  Quit,
+}
+
+enum TurnPhase {
   PlaceTerrain,
   RandomizeTerrain,
 }
