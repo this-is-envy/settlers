@@ -16,7 +16,7 @@ signal _terrain_selected()
 func _init(_ui: CanvasLayer, display: BoardDisplay, board: GameBoard) -> void:
     _board = board
     _display = display
-    print('GameRules._init')
+
     _desert_btn = _ui.get_node("DesertButton")
     _desert_btn.pressed.connect(_on_desert_clicked)
     _grass_btn = _ui.get_node("GrassButton")
